@@ -34,7 +34,7 @@ func init() {
 		if err != nil {
 			log.Errorf(c, "Error reading m.body: %v", err)
 		}
-		fmt.Printf("%s", body)
+		log.Infof(c, "Body:", body)
 	})
 
 	http.Handle("/", r)
