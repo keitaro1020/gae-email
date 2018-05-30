@@ -4,10 +4,9 @@ import (
 	"github.com/nissy/bon"
 	"google.golang.org/appengine"
 	"google.golang.org/appengine/log"
+	"io/ioutil"
 	"net/http"
 	"net/mail"
-	"fmt"
-	"io/ioutil"
 )
 
 func init() {
@@ -34,7 +33,7 @@ func init() {
 		if err != nil {
 			log.Errorf(c, "Error reading m.body: %v", err)
 		}
-		log.Infof(c, "Body:", body)
+		log.Infof(c, "Body:", string(body))
 	})
 
 	http.Handle("/", r)
